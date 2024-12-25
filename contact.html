@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - IIT Delhi</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validateForm() {
+      // Name Validation: Only letters and spaces
+      const name = document.getElementById("name").value;
+      const nameRegex = /^[A-Za-z\s]+$/;
+      if (!name.match(nameRegex)) {
+        alert("Please enter a valid name (letters and spaces only).");
+        return false;
+      }
+
+      // Email Validation: Simple email pattern
+      const email = document.getElementById("email").value;
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!email.match(emailRegex)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      // Message Validation: Check if message is not empty
+      const message = document.getElementById("message").value;
+      if (message.trim() === "") {
+        alert("Message cannot be empty.");
+        return false;
+      }
+
+      // If all validations pass
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="images\logo.png" alt="IIT Delhi Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Contact Us</h1>
+      <p>Feel free to reach out for admissions or any queries:</p>
+      <ul>
+        <li>Email: info@iitdelhi.ac.in</li>
+        <li>Phone: +91 11 2659 7135</li>
+        <li>Address: Hauz Khas, New Delhi, Delhi 110016</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Drop Us a Message</h2>
+      <form onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Indian Institute of Technology Delhi</p>
+  </footer>
+</body>
+</html>
