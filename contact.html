@@ -7,30 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <script>
     function validateForm() {
-      // Name Validation: Only letters and spaces
       const name = document.getElementById("name").value;
       const nameRegex = /^[A-Za-z\s]+$/;
       if (!name.match(nameRegex)) {
         alert("Please enter a valid name (letters and spaces only).");
         return false;
       }
-
-      // Email Validation: Simple email pattern
       const email = document.getElementById("email").value;
       const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       if (!email.match(emailRegex)) {
         alert("Please enter a valid email address.");
         return false;
       }
-
-      // Message Validation: Check if message is not empty
       const message = document.getElementById("message").value;
       if (message.trim() === "") {
         alert("Message cannot be empty.");
         return false;
       }
-
-      // If all validations pass
       return true;
     }
   </script>
